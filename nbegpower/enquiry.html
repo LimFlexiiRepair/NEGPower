@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neg Power/ Contact Form</title>
+  <style>
+    .contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #212121;
+  border-radius: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #8ada9e;
+  border-radius: 5px;
+  background-color: #F7FEFE;
+  color: #000000;
+}
+
+.contact-form textarea {
+  height: 150px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #03DAC5;
+  border: none;
+  color: #F7FEFE;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #02C39A;
+  color: #fff;
+}
+
+
+.banner-text {
+  font-size: 18px;
+  color: #121212;
+  text-align: center;
+}
+
+.banner-text marquee {
+  font-family: 'Roboto', sans-serif;
+  white-space: nowrap;
+}
+
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #caffd7;
+      color: #caffd7;
+    }
+
+    .topbar {
+      background-color: #212121;
+      color: #03DAC5;
+      padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      margin-top: 40px;
+      transition: top 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #03DAC5;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .topbar-content {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+
+    .text1 {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .button {
+      padding: 8px 20px;
+      background-color: #03DAC5;
+      border: 2px solid #03DAC5;
+      color: #F7FEFE;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 4px;
+      cursor: pointer;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover {
+      background-color: #caffd7;
+      color: #fff;
+    }
+    /* Popup container */
+.popup {
+  display: none;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+  z-index: 1000; /* Ensure it sits on top of other content */
+  overflow: auto; /* Enable scrolling if needed */
+}
+
+/* Popup content */
+.popup-content {
+  background-color: #fefefe;
+  width: 80%; /* Adjust width as needed */
+  max-width: 500px; /* Set a maximum width to avoid stretching on large screens */
+  margin: 10% auto; /* Center the popup vertically */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #333; /* Darken the color on hover */
+}
+
+.close:focus {
+  outline: none; /* Remove default focus outline */
+}
+
+    .content {
+      padding: 0;
+      margin-top: 50px;
+      border-radius: 15px;
+      background-color:    #caffd7;
+;
+      
+      position: relative;
+      overflow: hidden; /* Ensure the images overflow correctly */
+    }
+
+    h1, p {
+      color: #03DAC5;
+    }
+
+    @media screen and (max-width: 600px) {
+      .topbar {
+        padding: 8px 16px;
+      }
+
+      .content {
+        padding: 10px;
+        margin-top: 40px;
+      }
+
+      .button {
+        font-size: 12px;
+        padding: 8px 16px;
+        margin: 4px 2px;
+      }
+
+      .logo {
+        width: 30px;
+      }
+
+      .text1 {
+        font-size: 16px;
+      }
+
+      .content img {
+        width: 100%;
+        height: auto;
+      }
+
+      .content p {
+        font-size: 16px;
+      }
+
+      .topbar {
+        display: none; /* Hide the topbar on smaller screens */
+      }
+    }
+
+
+.description {
+        max-width: 800px; /* Set maximum width */
+        margin: 20px; /* Add margin */
+        padding: 10px; /* Add padding */
+        word-wrap: break-word; /* Enable word wrapping */
+    }
+
+  </style>
+</head>
+<body>
+
+
+
+<div class="content">
+    <img src="NEG_Logo_-_trademark-removebg-preview.png" style="margin-left: 41%;">
+    <h1 style="margin-left: 43%; margin-right: 40%; color: #1b1b1b;">Contact Us Here!</h1>
+    <form id="contactForm" class="contact-form">
+        <input type="text" id="name" name="name" placeholder="Company Name" required>
+        <input type="text" id="business" name="business" placeholder="Nature of Business" required>
+        <input type="text" id="location" name="location" placeholder="Office Location" required>
+        <input type="text" id="phone" name="phone" placeholder="Tel. No." required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" placeholder="Interested Product/ Inquiry" required></textarea>
+        <button type="submit" class="button">Submit</button>
+        <p style="text-align: center; margin-top: 8%;">NEG POWER PTE. LTD.<br>
+          (UEN: 202400880C)<br>
+          2 INTERNATIONAL BUSINESS PARK<br>
+          #09-05 TOWER 1 THE STRATEGY<br>
+          SINGAPORE 609930<br>
+          TEL: +65 6359 9011<br>
+          </p>
+       
+     </form>
+
+
+      
+     <br>
+     <br>
+     <br>
+     <br>
+     
+     <h6 style="color: #1b1b1b; text-align: center;">© 2024 by NEG Power, The Strategy, Singapore</h6> 
+    
+  
+</div>
+
+<div class="popup" id="popupContainer_sucess">
+  <div class="popup-content" id="popupContent">
+    
+    <p style="text-align: center;">Form submission is a success!</p>
+    <button class="closePopupButton" id="closePopupButton" onclick="close_newpage('popupContainer_sucess')">Close</button>
+  </div>
+</div>
+<div class="popup" id="popupContainer_fail">
+  <div class="popup-content" id="popupContent">
+    
+    <p style="text-align: center;">Oops! it seemed like something went wrong! Please try again later.<br>
+    Error code: 243<br>
+   Please contact us at +65 6359 9011 if the issue persists.</p>
+    <button class="closePopupButton" id="closePopupButton" onclick="close_newpage('popupContainer_fail')">Close</button>
+  </div>
+</div>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+    (function() {
+        emailjs.init("JTOO7rGT5xnRPLiww"); // Replace with your EmailJS user ID
+    })();
+</script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from submitting via HTML
+      
+      // Get the values entered by the user
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+      var phone = document.getElementById('phone').value;
+      var location = document.getElementById('location').value;
+      var business = document.getElementById('business').value;
+  
+      // Send email with form values
+      var templateParams = {
+          from_email: email,
+          from_name: name,
+          message: message,
+          phone: phone,
+          location: location,
+          business: business
+      };
+      console.log(templateParams)
+  
+      emailjs.send('service_hiccw2f', 'template_oy2ilag', templateParams, 'hFp_J0IJaaPoZcnNm')
+          .then(function(response) {
+               new_page("popupContainer_sucess"); // Corrected ID parameter
+              console.log('SUCCESS!', response.status, response.text);
+          }, function(error) {
+            new_page("popupContainer_fail"); // Corrected ID parameter
+              console.log('FAILED...', error);
+          });
+  
+      this.reset(); // Reset the form after submission
+  });
+  
+  // Moved outside the event listener function
+  function new_page(item_id) {
+    var element_page = document.getElementById(item_id);
+    element_page.style.opacity = 1; // Adjusted opacity to make the popup visible
+    element_page.style.display = "block";
+  }
+  
+  // Moved outside the event listener function
+  function close_newpage(item_id) {
+    var element_page = document.getElementById(item_id);
+    element_page.style.opacity = 0;
+    element_page.style.display = "none";
+  }
+  </script>
+
+
+
+
+</script>
+
+
+</body>
+</html>
